@@ -8,10 +8,10 @@ public class Application{
     public void Run() {
         float a = 0, b = 0, c = 0, d = 0;
 
-        Envelope env1 = new Envelope(a, b);
+        Envelope env1 = new Envelope();
         env1.length = a;
         env1.width = b;
-        Envelope env2 = new Envelope(c, d);
+        Envelope env2 = new Envelope();
         env2.length = c;
         env2.width = d;
 
