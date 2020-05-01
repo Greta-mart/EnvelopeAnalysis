@@ -9,11 +9,8 @@ public class Application{
         float a = 0, b = 0, c = 0, d = 0;
 
         Envelope env1 = new Envelope();
-        env1.length = a;
-        env1.width = b;
+
         Envelope env2 = new Envelope();
-        env2.length = c;
-        env2.width = d;
 
         Scanner s = new Scanner(System.in);
             do {
@@ -33,6 +30,12 @@ public class Application{
                     System.out.println("The length and width of envelopes should be numbers");
                     System.exit(1);
                 }
+                env1.setLength(a);
+                env1.setWidth(b);
+
+                env2.setLength(c);
+                env2.setWidth(d);
+
                 if (env1.compareEnvelope(env2)) {
                     System.out.println("The envelope [2] can be placed into the envelop [1]");
                 } else {
