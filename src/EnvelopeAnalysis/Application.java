@@ -31,6 +31,7 @@ public class Application {
                 System.out.println("The length and width of envelopes should be numbers");
                 System.exit(1);
             }
+
             env1.setLength(a);
             env1.setWidth(b);
 
@@ -43,11 +44,10 @@ public class Application {
                 System.out.println("The envelope [2] can't be placed into the envelop [1]");
             }
 
-            System.out.println("Continue?");
+            System.out.println("Would you like to continue (Y/N): ");
             answer = s.next();
         }
-        while (answer.equalsIgnoreCase("y"));
-        // s.close();
+        while ((answer.equalsIgnoreCase("y") || answer.equalsIgnoreCase("yes")));
     }
 
 }
