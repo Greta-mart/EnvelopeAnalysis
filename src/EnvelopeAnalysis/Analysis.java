@@ -23,8 +23,6 @@ public class Analysis {
 
             System.out.print("Please enter the width of envelope [2]: ");
             d = s.nextFloat();
-
-            s.close();
         }
         catch (InputMismatchException ex){
             System.out.println("The length and width of envelopes should be numbers");
@@ -43,16 +41,19 @@ public class Analysis {
 
     public void continueWork() {
         String answer;
-        Scanner s = new Scanner(System.in);
+        Scanner in = new Scanner(System.in);
 
         System.out.print("Would you like to continue work (y/n): ");
-        answer = s.next();
+        answer = in.next();
         if (answer.equalsIgnoreCase("y")) {
             inputData();
             analysisData();
+            continueWork();
         }
         else {
             System.exit(0);
         }
+
+        in.close();
     }
 }
