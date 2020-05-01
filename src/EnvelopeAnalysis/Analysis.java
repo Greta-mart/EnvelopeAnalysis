@@ -23,6 +23,8 @@ public class Analysis {
 
             System.out.print("Please enter the width of envelope [2]: ");
             d = s.nextFloat();
+
+            s.close();
         }
         catch (InputMismatchException ex){
             System.out.println("The length and width of envelopes should be numbers");
