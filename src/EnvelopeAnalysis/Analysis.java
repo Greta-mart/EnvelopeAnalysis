@@ -8,7 +8,7 @@ public class Analysis {
     float c, d;
 
 
-    public void inputData () {
+    public void inputData() {
         Scanner s = new Scanner(System.in);
 
         try {
@@ -23,18 +23,16 @@ public class Analysis {
 
             System.out.print("Please enter the width of envelope [2]: ");
             d = s.nextFloat();
-        }
-        catch (InputMismatchException ex){
+        } catch (InputMismatchException ex) {
             System.out.println("The length and width of envelopes should be numbers");
             System.exit(1);
         }
     }
 
-    public void analysisData(){
+    public void analysisData() {
         if (a >= c && b >= d) {
             System.out.println("The envelope [2] can be placed into the envelop [1]");
-        }
-        else {
+        } else {
             System.out.println("The envelope [2] can't be placed into the envelop [1]");
         }
     }
@@ -49,8 +47,7 @@ public class Analysis {
             inputData();
             analysisData();
             continueWork();
-        }
-        else {
+        } else {
             System.exit(0);
         }
 
