@@ -1,14 +1,14 @@
 package EnvelopeAnalysis;
 
 public class Envelope {
-    float a, b;
+    float width, length;
 
     Envelope(float a, float b){
-        this.a = a;
-        this.b = b;
+        this.width = a;
+        this.length = b;
     }
-    public boolean compareEnvelope (float c, float d){
-        if (a >= c && b >= d) {
+    public boolean compareEnvelope (Envelope obj){
+        if (width >= obj.width && length >= obj.length) {
             return true;
         }
         else{
