@@ -11,7 +11,7 @@ public class Envelope {
         this.length = length;
     }
 
-    public boolean compareEnvelope (Envelope obj){
+    public boolean compareEnvelope(Envelope obj) {
         return width > obj.width && length > obj.length;
     }
 }
