@@ -2,26 +2,26 @@ package EnvelopeAnalysis;
 
 import java.util.Scanner;
 
+import static java.lang.Float.parseFloat;
+
 public class Application {
 
     Scanner s = new Scanner(System.in);
 
     public float inputData(String param, byte i) {
-        boolean p = false;
-        float r = 0;
+        boolean isSuccess = false;
+        float size = 0;
         do {
             try {
                 System.out.print("Please enter the " + param + " of envelope [" + i + "]: ");
-                r = s.nextFloat();
-                p = true;
-               // return r;
+                size = parseFloat(s.nextLine());
+                isSuccess = true;
             } catch (Exception ex) {
                 System.out.println("The length and width of envelopes should be numbers");
-                //System.exit(1);
             }
         }
-        while (p == false);
-        return r;
+        while (isSuccess == false);
+        return size;
     }
 
     public void Run() {
@@ -50,9 +50,8 @@ public class Application {
             }
 
             System.out.println("Would you like to continue (Y/N): ");
-            answer = s.next();
+            answer = s.nextLine();
         }
         while ((answer.equalsIgnoreCase("y") || answer.equalsIgnoreCase("yes")));
     }
-
 }
