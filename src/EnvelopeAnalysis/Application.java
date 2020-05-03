@@ -1,36 +1,41 @@
 package EnvelopeAnalysis;
 
-import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Application {
+
+    Scanner s = new Scanner(System.in);
+
+    public float inputData(String param, byte i) {
+        boolean p = false;
+        float r = 0;
+        do {
+            try {
+                System.out.print("Please enter the " + param + " of envelope [" + i + "]: ");
+                r = s.nextFloat();
+                p = true;
+               // return r;
+            } catch (Exception ex) {
+                System.out.println("The length and width of envelopes should be numbers");
+                //System.exit(1);
+            }
+        }
+        while (p == false);
+        return r;
+    }
 
     public void Run() {
         float a = 0, b = 0, c = 0, d = 0;
         String answer;
 
         Envelope env1 = new Envelope();
-
         Envelope env2 = new Envelope();
 
-        Scanner s = new Scanner(System.in);
         do {
-            try {
-                System.out.print("Please enter the length of envelope [1]: ");
-                a = s.nextFloat();
-
-                System.out.print("Please enter the width of envelope [1]: ");
-                b = s.nextFloat();
-
-                System.out.print("Please enter the length of envelope [2]: ");
-                c = s.nextFloat();
-
-                System.out.print("Please enter the width of envelope  [2]: ");
-                d = s.nextFloat();
-            } catch (InputMismatchException ex) {
-                System.out.println("The length and width of envelopes should be numbers");
-                System.exit(1);
-            }
+            a = inputData("length", (byte) 1);
+            b = inputData("width", (byte) 1);
+            c = inputData("length", (byte) 2);
+            d = inputData("width", (byte) 2);
 
             env1.setLength(a);
             env1.setWidth(b);
