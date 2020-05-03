@@ -1,7 +1,6 @@
 package EnvelopeAnalysis;
 
 import java.util.Scanner;
-
 import static java.lang.Float.parseFloat;
 
 public class Application {
